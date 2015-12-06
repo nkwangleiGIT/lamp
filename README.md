@@ -8,13 +8,13 @@ Out-of-the-box LAMP image (PHP+MySQL)
 Usage
 -----
 
-To create the image `liangwei/lamp`, execute the following command on the liangwei-docker-lamp folder:
+To create the image `tutum/lamp`, execute the following command on the liangwei-docker-lamp folder:
 
-	docker build -t liangwei/lamp .
+	docker build -t tutum/lamp .
 
 You can now push your new image to the registry:
 
-	docker push liangwei/lamp
+	docker push tutum/lamp
 
 
 Running your LAMP docker image
@@ -22,7 +22,7 @@ Running your LAMP docker image
 
 Start your image binding the external ports 80 and 3306 in all interfaces to your container:
 
-	docker run -d -p 80:80 -p 3306:3306 liangwei/lamp
+	docker run -d -p 80:80 -p 3306:3306 tutum/lamp
 
 Test your deployment:
 
@@ -37,7 +37,7 @@ Loading your custom PHP application
 In order to replace the "Hello World" application that comes bundled with this docker image,
 create a new `Dockerfile` in an empty folder with the following contents:
 
-	FROM liangwei/lamp:latest
+	FROM tutum/lamp:latest
 	RUN rm -fr /app && git clone https://github.com/username/customapp.git /app
 	EXPOSE 80 3306
 	CMD ["/run.sh"]
@@ -106,7 +106,7 @@ Setting a specific password for the MySQL server admin account
 If you want to use a preset password instead of a random generated one, you can
 set the environment variable `MYSQL_PASS` to your specific password when running the container:
 
-	docker run -d -p 80:80 -p 3306:3306 -e MYSQL_PASS="mypass" liangwei/lamp
+	docker run -d -p 80:80 -p 3306:3306 -e MYSQL_PASS="mypass" tutum/lamp
 
 You can now test your new admin password:
 
