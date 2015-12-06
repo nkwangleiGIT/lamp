@@ -5,6 +5,12 @@
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
+                ServerLimit       1000
+                StartServers       30
+                MinSpareServers   30
+                MaxSpareServers   45
+                MaxClients       1000
+                MaxRequestsPerChild  4000
         </Directory>
         <Directory /var/www/html>
                 Options Indexes FollowSymLinks MultiViews
@@ -39,11 +45,6 @@
     AddOutputFilterByType DEFLATE text/html text/plain text/xml application/x-httpd-php
     AddOutputFilter DEFLATE css js html htm gif jpg png bmp php
     </IfModule>
-    ServerLimit       1000
-    StartServers       30
-    MinSpareServers   30
-    MaxSpareServers   45
-    MaxClients       1000
-    MaxRequestsPerChild  4000
+
 
 </VirtualHost>
