@@ -1,3 +1,5 @@
-��ʹ����ȸ��û�����ݾ�������ÿ�θ��´��붼��Ҫ����buildһ�Σ����Դ��ļ�����ÿ�θ��´��������build��
+因使用灵雀云没有数据卷，所以每次更新代码都需要重新build一次，所以此文件用于每次更新代码后重新build。
 2015-12-12
-���´������ݿ�
+更新纯真数据库
+2015-12-13
+getarea.class.php中使用curl替换file_get_contents，提高整体效率
