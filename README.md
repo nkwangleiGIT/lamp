@@ -10,7 +10,7 @@ Usage
 
 To create the image `tutum/lamp`, execute the following command on the liangwei-docker-lamp folder:
 
-	docker build -t tutum/lamp.
+	docker build -t tutum/lamp
 
 You can now push your new image to the registry:
 
