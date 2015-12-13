@@ -1,4 +1,4 @@
-FROM index.alauda.cn/alauda/ubuntu:trusty
+FROM ubuntu:trusty
 MAINTAINER Liang Wei <liang.wei@outlook.com>
 
 # Install packages
