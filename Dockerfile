@@ -4,9 +4,8 @@ MAINTAINER Liang Wei <liang.wei@outlook.com>
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
-  apt-get -y install supervisor git apache2 libapache2-mod-php5 pwgen php-apc php5-mcrypt && \
+  apt-get -y install supervisor git apache2 libapache2-mod-php5 pwgen php-apc php5-mcrypt curl libcurl3 libcurl3-dev php5-curl && \
   echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN echo "extension=php_curl.dll" >> /etc/php5/apache2/php.ini
 # Add image configuration and scripts
 ADD start-apache2.sh /start-apache2.sh
 ADD run.sh /run.sh
