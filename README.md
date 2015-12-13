@@ -1,6 +1,7 @@
-liangwei-docker-lamp
-===================
+tutum-docker-lamp
+=================
 
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
 
 Out-of-the-box LAMP image (PHP+MySQL)
 
@@ -8,9 +9,9 @@ Out-of-the-box LAMP image (PHP+MySQL)
 Usage
 -----
 
-To create the image `tutum/lamp`, execute the following command on the liangwei-docker-lamp folder:
+To create the image `tutum/lamp`, execute the following command on the tutum-docker-lamp folder:
 
-	docker build -t tutum/lamp
+	docker build -t tutum/lamp .
 
 You can now push your new image to the registry:
 
@@ -123,4 +124,4 @@ Disabling .htaccess
     RUN a2enmod rewrite
 
 
-**by http://www.liangwei.cc**
+**by http://www.tutum.co**

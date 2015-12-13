@@ -34,11 +34,5 @@
 	# Set HTTPS environment variable if we came in over secure
 	#  channel.
 	SetEnvIf x-forwarded-proto https HTTPS=on
-    <IfModule mod_deflate.c>
-    DeflateCompressionLevel 7
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/x-httpd-php
-    AddOutputFilter DEFLATE css js html htm gif jpg png bmp php jpeg
-    </IfModule>
-
 
 </VirtualHost>
