@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM daocloud.io/ubuntu:trusty
 MAINTAINER Liang Wei <liang.wei@outlook.com>
 
 # Install packages
