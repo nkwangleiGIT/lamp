@@ -124,4 +124,4 @@ Disabling .htaccess
     RUN a2enmod rewrite
 
 
-**by http://www.tutum.co**
+
