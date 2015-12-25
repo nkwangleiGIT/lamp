@@ -17,7 +17,7 @@ ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 RUN echo "display_errors = Off" >> /etc/php5/apache2/php.ini
 # Configure /app folder with sample app
-RUN git clone https://git.oschina.net/iliangwei/ip.git /app
+RUN git clone https://github.com/liangwei1988/ip.git /app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 #Enviornment variables to configure php
