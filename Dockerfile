@@ -10,11 +10,15 @@ RUN apt-get update && \
 ADD start-apache2.sh /start-apache2.sh
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
+ADD server.crt /etc/ssl/certs/
+ADD server.key /etc/ssl/private/
 ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 
 # config to enable .htaccess
 ADD apache_default /etc/apache2/sites-available/000-default.conf
+ADD apache_default_ssl /etc/apache2/sites-enabled/000-default-ssl.conf
 RUN a2enmod rewrite
+RUN a2enmod ssl
 RUN echo "display_errors = Off" >> /etc/php5/apache2/php.ini
 # Configure /app folder with sample app
 RUN git clone https://github.com/liangwei1988/ip.git /app
@@ -23,5 +27,5 @@ RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 #Enviornment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
 ENV PHP_POST_MAX_SIZE 10M
-EXPOSE 80
+EXPOSE 80 443
 CMD ["/run.sh"]

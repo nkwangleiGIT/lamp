@@ -34,5 +34,7 @@
 	# Set HTTPS environment variable if we came in over secure
 	#  channel.
 	SetEnvIf x-forwarded-proto https HTTPS=on
-
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 </VirtualHost>
